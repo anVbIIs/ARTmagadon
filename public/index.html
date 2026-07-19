@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio ARTmagadon | Artystyczne Projekty i Realizacje Murali</title>
+    
+    <!-- Meta tags SEO -->
+    <meta name="description" content="Studio ARTmagadon - autorskie murale artystyczne. Połączenie geometrycznego chaosu Agnieszki i organicznego mroku Agaty. Tworzymy unikalne malarstwo ścienne bez nudnych kompromisów.">
+    <meta name="keywords" content="murale, malarstwo ścienne, Toruń, Studio ARTmagadon, Agnieszka, Agata, projekty murali, street art, dekoracja wnętrz, elewacje">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Anybody:wght@400;600;700;800&family=Hanken+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Nawigacja (Navbar) -->
+    <nav class="navbar" id="top-nav">
+        <a href="#" class="navbar-brand">ART<span>magadon</span></a>
+        <div class="navbar-links">
+            <a href="#about" class="nav-link">O Nas</a>
+            <a href="#projects" class="nav-link">Wolne Projekty</a>
+            <a href="#faq" class="nav-link">FAQ</a>
+            <a href="regulamin.html" class="nav-link">Regulamin</a>
+        </div>
+        <a href="#quote" class="nav-cta">Wycena online</a>
+    </nav>
+
+    <!-- Split-Screen Hero (Ekran startowy) -->
+    <section class="hero-split">
+        <!-- Agnieszka (Lewa strona) -->
+        <div class="artist-panel panel-agnieszka" onclick="openArtistPortfolio('agnieszka')">
+            <div class="panel-bg" style="background-image: url('./tła/mural_agnieszki.webp');"></div>
+            <div class="panel-overlay"></div>
+            <div class="panel-content">
+                <span class="panel-tag">GEOMETRIA & KOLOR</span>
+                <h2 class="panel-title">AGNIESZKA</h2>
+                <button class="panel-btn">ZOBACZ PORTFOLIO</button>
+            </div>
+        </div>
+
+        <!-- Agata (Prawa strona) -->
+        <div class="artist-panel panel-agata" onclick="openArtistPortfolio('agata')">
+            <div class="panel-bg" style="background-image: url('./tła/mural_agaty.webp');"></div>
+            <div class="panel-overlay"></div>
+            <div class="panel-content" style="text-align: right; margin-left: auto;">
+                <span class="panel-tag">ORGANICZNY MROK</span>
+                <h2 class="panel-title">AGATA</h2>
+                <button class="panel-btn" style="margin-left: auto;">ZOBACZ PORTFOLIO</button>
+            </div>
+        </div>
+
+        <!-- Środkowe Logo (Pozycjonowane na styku sekcji na dole) -->
+        <div class="center-logo-container style-splatter-reveal">
+            <!-- Gwiezdny, rozproszony pył farby (splat-dot) we wszystkich kolorach (żółty, czerwony, niebieski, fiolet, turkus, biel i czerń) -->
+            <!-- Gwiezdny, rozproszony pył farby (splat-dot) we wszystkich kolorach (żółty, czerwony, niebieski, fiolet, turkus, biel i czerń) -->
+            <div class="paint-splatters">
+                <!-- Zolc -->
+                <div class="splat-dot" style="--tx: -162px; --ty: -108px; --size: 7px; --d: 50; --color: var(--color-agni-yellow);"></div>
+                <div class="splat-dot" style="--tx: -117px; --ty: -171px; --size: 15px; --d: 120; --color: var(--color-agni-yellow);"></div>
+                <div class="splat-dot" style="--tx: -198px; --ty: -45px; --size: 5px; --d: 200; --color: var(--color-agni-yellow);"></div>
+                <div class="splat-dot" style="--tx: -81px; --ty: 135px; --size: 9px; --d: 80; --color: var(--color-agni-yellow);"></div>
+                <div class="splat-dot" style="--tx: -144px; --ty: 72px; --size: 13px; --d: 150; --color: var(--color-agni-yellow);"></div>
+                <div class="splat-dot" style="--tx: -45px; --ty: -151px; --size: 10px; --d: 100; --color: var(--color-agni-yellow);"></div>
+                <div class="splat-dot" style="--tx: -135px; --ty: 135px; --size: 14px; --d: 130; --color: var(--color-agni-yellow);"></div>
+                <div class="splat-dot" style="--tx: -165px; --ty: -159px; --size: 8px; --d: 70; --color: var(--color-agni-yellow);"></div>
+                <div class="splat-dot" style="--tx: 45px; --ty: -207px; --size: 11px; --d: 160; --color: var(--color-agni-yellow);"></div>
+                <div class="splat-dot" style="--tx: -90px; --ty: -80px; --size: 3px; --d: 90; --color: var(--color-agni-yellow);"></div>
+                <div class="splat-dot" style="--tx: -140px; --ty: -40px; --size: 4px; --d: 150; --color: var(--color-agni-yellow);"></div>
+                <div class="splat-dot" style="--tx: -110px; --ty: 160px; --size: 3px; --d: 70; --color: var(--color-agni-yellow);"></div>
+                <div class="splat-dot" style="--tx: -60px; --ty: 80px; --size: 4px; --d: 210; --color: var(--color-agni-yellow);"></div>
+                <div class="splat-dot" style="--tx: -170px; --ty: 40px; --size: 3px; --d: 120; --color: var(--color-agni-yellow);"></div>
+                <!-- Czerwien -->
+                <div class="splat-dot" style="--tx: -216px; --ty: -18px; --size: 8px; --d: 90; --color: var(--color-agni-red);"></div>
+                <div class="splat-dot" style="--tx: -135px; --ty: -81px; --size: 16px; --d: 40; --color: var(--color-agni-red);"></div>
+                <div class="splat-dot" style="--tx: -180px; --ty: 108px; --size: 7px; --d: 180; --color: var(--color-agni-red);"></div>
+                <div class="splat-dot" style="--tx: -88px; --ty: -212px; --size: 9px; --d: 220; --color: var(--color-agni-red);"></div>
+                <div class="splat-dot" style="--tx: -224px; --ty: 51px; --size: 5px; --d: 130; --color: var(--color-agni-red);"></div>
+                <div class="splat-dot" style="--tx: -99px; --ty: 207px; --size: 12px; --d: 90; --color: var(--color-agni-red);"></div>
+                <div class="splat-dot" style="--tx: -210px; --ty: -92px; --size: 9px; --d: 180; --color: var(--color-agni-red);"></div>
+                <div class="splat-dot" style="--tx: -72px; --ty: -135px; --size: 14px; --d: 50; --color: var(--color-agni-red);"></div>
+                <div class="splat-dot" style="--tx: -180px; --ty: -100px; --size: 4px; --d: 160; --color: var(--color-agni-red);"></div>
+                <div class="splat-dot" style="--tx: -120px; --ty: -150px; --size: 3px; --d: 80; --color: var(--color-agni-red);"></div>
+                <div class="splat-dot" style="--tx: -80px; --ty: -90px; --size: 4px; --d: 190; --color: var(--color-agni-red);"></div>
+                <div class="splat-dot" style="--tx: -140px; --ty: 90px; --size: 3px; --d: 100; --color: var(--color-agni-red);"></div>
+                <div class="splat-dot" style="--tx: -220px; --ty: 10px; --size: 4px; --d: 130; --color: var(--color-agni-red);"></div>
+                <!-- Niebieski -->
+                <div class="splat-dot" style="--tx: -108px; --ty: 171px; --size: 17px; --d: 110; --color: var(--color-agni-blue);"></div>
+                <div class="splat-dot" style="--tx: -63px; --ty: 99px; --size: 6px; --d: 60; --color: var(--color-agni-blue);"></div>
+                <div class="splat-dot" style="--tx: -187px; --ty: -133px; --size: 10px; --d: 160; --color: var(--color-agni-blue);"></div>
+                <div class="splat-dot" style="--tx: -140px; --ty: -181px; --size: 12px; --d: 210; --color: var(--color-agni-blue);"></div>
+                <div class="splat-dot" style="--tx: -58px; --ty: 202px; --size: 11px; --d: 180; --color: var(--color-agni-blue);"></div>
+                <div class="splat-dot" style="--tx: -126px; --ty: -117px; --size: 13px; --d: 110; --color: var(--color-agni-blue);"></div>
+                <div class="splat-dot" style="--tx: -171px; --ty: 18px; --size: 10px; --d: 220; --color: var(--color-agni-blue);"></div>
+                <div class="splat-dot" style="--tx: -207px; --ty: -81px; --size: 7px; --d: 140; --color: var(--color-agni-blue);"></div>
+                <div class="splat-dot" style="--tx: -160px; --ty: -160px; --size: 3px; --d: 220; --color: var(--color-agni-blue);"></div>
+                <div class="splat-dot" style="--tx: -100px; --ty: -120px; --size: 4px; --d: 60; --color: var(--color-agni-blue);"></div>
+                <div class="splat-dot" style="--tx: -210px; --ty: -20px; --size: 3px; --d: 140; --color: var(--color-agni-blue);"></div>
+                <div class="splat-dot" style="--tx: -90px; --ty: 210px; --size: 4px; --d: 180; --color: var(--color-agni-blue);"></div>
+                <div class="splat-dot" style="--tx: -147px; --ty: 176px; --size: 3px; --d: 110; --color: var(--color-agni-blue);"></div>
+                <!-- Fiolet -->
+                <div class="splat-dot" style="--tx: 171px; --ty: -99px; --size: 16px; --d: 70; --color: var(--color-agata-purple);"></div>
+                <div class="splat-dot" style="--tx: 108px; --ty: -171px; --size: 7px; --d: 140; --color: var(--color-agata-purple);"></div>
+                <div class="splat-dot" style="--tx: 207px; --ty: -36px; --size: 5px; --d: 230; --color: var(--color-agata-purple);"></div>
+                <div class="splat-dot" style="--tx: 135px; --ty: 108px; --size: 13px; --d: 90; --color: var(--color-agata-purple);"></div>
+                <div class="splat-dot" style="--tx: 72px; --ty: 144px; --size: 8px; --d: 170; --color: var(--color-agata-purple);"></div>
+                <div class="splat-dot" style="--tx: 54px; --ty: -153px; --size: 11px; --d: 80; --color: var(--color-agata-purple);"></div>
+                <div class="splat-dot" style="--tx: 140px; --ty: -100px; --size: 3px; --d: 80; --color: var(--color-agata-purple);"></div>
+                <div class="splat-dot" style="--tx: 170px; --ty: -60px; --size: 4px; --d: 200; --color: var(--color-agata-purple);"></div>
+                <div class="splat-dot" style="--tx: 190px; --ty: 60px; --size: 3px; --d: 140; --color: var(--color-agata-purple);"></div>
+                <!-- Turkus -->
+                <div class="splat-dot" style="--tx: 198px; --ty: 63px; --size: 9px; --d: 100; --color: var(--color-agata-turquoise);"></div>
+                <div class="splat-dot" style="--tx: 144px; --ty: -9px; --size: 19px; --d: 50; --color: var(--color-agata-turquoise);"></div>
+                <div class="splat-dot" style="--tx: 99px; --ty: 198px; --size: 6px; --d: 190; --color: var(--color-agata-turquoise);"></div>
+                <div class="splat-dot" style="--tx: 149px; --ty: -174px; --size: 11px; --d: 130; --color: var(--color-agata-turquoise);"></div>
+                <div class="splat-dot" style="--tx: 193px; --ty: -123px; --size: 5px; --d: 250; --color: var(--color-agata-turquoise);"></div>
+                <div class="splat-dot" style="--tx: 100px; --ty: 120px; --size: 4px; --d: 110; --color: var(--color-agata-turquoise);"></div>
+                <div class="splat-dot" style="--tx: 184px; --ty: -138px; --size: 3px; --d: 150; --color: var(--color-agata-turquoise);"></div>
+                <div class="splat-dot" style="--tx: 150px; --ty: -170px; --size: 4px; --d: 220; --color: var(--color-agata-turquoise);"></div>
+                <!-- Róż (Agata) -->
+                <div class="splat-dot" style="--tx: 130px; --ty: -50px; --size: 8px; --d: 110; --color: #ff2a8d;"></div>
+                <div class="splat-dot" style="--tx: 180px; --ty: 100px; --size: 11px; --d: 160; --color: #ff2a8d;"></div>
+                <div class="splat-dot" style="--tx: 210px; --ty: -140px; --size: 6px; --d: 70; --color: #ff2a8d;"></div>
+                <div class="splat-dot" style="--tx: 100px; --ty: 190px; --size: 10px; --d: 190; --color: #ff2a8d;"></div>
+                <div class="splat-dot" style="--tx: 220px; --ty: -10px; --size: 5px; --d: 140; --color: #ff2a8d;"></div>
+                <div class="splat-dot" style="--tx: 150px; --ty: 150px; --size: 4px; --d: 220; --color: #ff2a8d;"></div>
+                <!-- Biel -->
+                <div class="splat-dot" style="--tx: 26px; --ty: -188px; --size: 12px; --d: 100; --color: #FFFFFF;"></div>
+                <div class="splat-dot" style="--tx: -34px; --ty: -171px; --size: 6px; --d: 180; --color: #FFFFFF;"></div>
+                <div class="splat-dot" style="--tx: 54px; --ty: 162px; --size: 8px; --d: 120; --color: #FFFFFF;"></div>
+                <div class="splat-dot" style="--tx: -40px; --ty: 184px; --size: 10px; --d: 160; --color: #FFFFFF;"></div>
+                <div class="splat-dot" style="--tx: 9px; --ty: 225px; --size: 5px; --d: 240; --color: #FFFFFF;"></div>
+                <div class="splat-dot" style="--tx: -90px; --ty: -180px; --size: 9px; --d: 80; --color: #FFFFFF;"></div>
+                <div class="splat-dot" style="--tx: -162px; --ty: -36px; --size: 11px; --d: 190; --color: #FFFFFF;"></div>
+                <div class="splat-dot" style="--tx: -63px; --ty: 153px; --size: 8px; --d: 120; --color: #FFFFFF;"></div>
+                <div class="splat-dot" style="--tx: -121px; --ty: -195px; --size: 3px; --d: 170; --color: #FFFFFF;"></div>
+                <div class="splat-dot" style="--tx: -200px; --ty: -70px; --size: 4px; --d: 90; --color: #FFFFFF;"></div>
+                <div class="splat-dot" style="--tx: -70px; --ty: 140px; --size: 3px; --d: 130; --color: #FFFFFF;"></div>
+                <!-- Czern -->
+                <div class="splat-dot" style="--tx: 18px; --ty: -117px; --size: 16px; --d: 60; --color: #000000;"></div>
+                <div class="splat-dot" style="--tx: -27px; --ty: 117px; --size: 14px; --d: 130; --color: #000000;"></div>
+                <div class="splat-dot" style="--tx: 117px; --ty: 72px; --size: 21px; --d: 80; --color: #000000;"></div>
+                <div class="splat-dot" style="--tx: -99px; --ty: -63px; --size: 15px; --d: 150; --color: #000000;"></div>
+                <div class="splat-dot" style="--tx: 81px; --ty: -81px; --size: 13px; --d: 90; --color: #000000;"></div>
+                <div class="splat-dot" style="--tx: 187px; --ty: 133px; --size: 8px; --d: 210; --color: #000000;"></div>
+                <div class="splat-dot" style="--tx: -175px; --ty: -149px; --size: 7px; --d: 140; --color: #000000;"></div>
+            </div>
+
+            <div class="center-logo-circle">
+                <!-- Przednia strona: Człowiek Witruwiański -->
+                <div class="center-logo-face logo-front">
+                    <img src="./logo/logo_artmagadon_v4.png" alt="Studio ARTmagadon" class="center-logo-img">
+                </div>
+                <!-- Tylna strona: Nazwa studia -->
+                <div class="center-logo-face logo-back">
+                    <span>STUDIO<br>ARTmagadon</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- O Nas / Manifest (Manifesto) -->
+    <section class="section-manifesto" id="about">
+        <div class="container">
+            <div class="manifesto-grid">
+                <div class="manifesto-text">
+                    <span class="text-mono" style="color: var(--color-agata-turquoise); margin-bottom: 15px; display: block;">MANIFEST ARTYSTYCZNY</span>
+                    <h2 class="manifesto-title">Dwie artystki. Pełen kontrast.<br><span>Zero nudnych kompromisów.</span></h2>
+                    <p class="manifesto-para">
+                        Studio ARTmagadon to zderzenie dwóch odmiennych energii artystycznych. Jako dyplomowane artystki (dyplomy magistra sztuki - MFA), nie szukamy bezpiecznych, szarych rozwiązań. Oferujemy wyrazisty dialog między geometrycznym, żywym ładem i komiksowym popem, a mrocznym, organicznym mistycyzmem inspirowanym naturą. Każda nasza realizacja to unikalna fuzja stylów dostosowana do Twojej przestrzeni.
+                    </p>
+                    <div class="manifesto-badges">
+                        <div class="badge-card">
+                            <span class="badge-num">MFA</span>
+                            <span class="badge-label">Tytuły magistra sztuki</span>
+                        </div>
+                        <div class="badge-card">
+                            <span class="badge-num yellow">100%</span>
+                            <span class="badge-label">Autorskie projekty</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="manifesto-visual">
+                    <div class="manifesto-img-container">
+                        <!-- Shows rotated mural context or portrait -->
+                        <img src="./tła/mural_do_obrocenia_agaty.webp" alt="Mural Studio ARTmagadon" class="manifesto-img">
+                        <div class="manifesto-caption">
+                            Fuzja stylów w przestrzeni - Studio ARTmagadon
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wolne Projekty (Bento-grid) -->
+    <section class="section-projects" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-header-title">
+                    <span class="section-header-tag">KATALOG PROJEKTÓW</span>
+                    <h2>Wolne projekty</h2>
+                </div>
+                <div class="section-header-desc">
+                    Gotowe projekty cyfrowe nałożone na zdjęcia surowych wnętrz. Zobacz, jak wyglądają w przestrzeni i kup wzór od ręki.
+                </div>
+            </div>
+            
+            <div class="projects-grid" id="projects-grid">
+                <!-- Projekt 1 -->
+                <div class="project-card large" onclick="openProjectDetail('proj-1')">
+                    <div class="project-card-img-wrapper">
+                        <img src="./wolne projekty na murale/1000001375_opt.webp" alt="Mroczny Portret Natury" class="project-card-img">
+                        <div class="project-card-overlay">
+                            <h3 class="project-card-title">Mroczny Portret Natury</h3>
+                            <span class="project-card-badge badge-inside">Wnętrze</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projekt 2 -->
+                <div class="project-card" onclick="openProjectDetail('proj-2')">
+                    <div class="project-card-img-wrapper">
+                        <img src="./wolne projekty na murale/2023071920szpital20torun20PPW20v4-A0720elewacja20pd_opt.webp" alt="Elewacja Szpitalna Toruń" class="project-card-img">
+                        <div class="project-card-overlay">
+                            <h3 class="project-card-title">Elewacja Szpitalna Toruń</h3>
+                            <span class="project-card-badge badge-outside">Zewnątrz</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projekt 3 -->
+                <div class="project-card" onclick="openProjectDetail('proj-3')">
+                    <div class="project-card-img-wrapper">
+                        <img src="./wolne projekty na murale/Grafika_bez_nazwy-3_opt.webp" alt="Kompozycja Botaniczna" class="project-card-img">
+                        <div class="project-card-overlay">
+                            <h3 class="project-card-title">Kompozycja Botaniczna</h3>
+                            <span class="project-card-badge badge-any">Wszędzie</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projekt 4 -->
+                <div class="project-card" onclick="openProjectDetail('proj-4')">
+                    <div class="project-card-img-wrapper">
+                        <img src="./wolne projekty na murale/IMG_1372_opt.webp" alt="Światło w Cieniu" class="project-card-img">
+                        <div class="project-card-overlay">
+                            <h3 class="project-card-title">Światło w Cieniu</h3>
+                            <span class="project-card-badge badge-inside">Wnętrze</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projekt 5 -->
+                <div class="project-card large" onclick="openProjectDetail('proj-5')">
+                    <div class="project-card-img-wrapper">
+                        <img src="./wolne projekty na murale/Projekt (20231006054119)_opt.webp" alt="Geometryczny Puls Miasta" class="project-card-img">
+                        <div class="project-card-overlay">
+                            <h3 class="project-card-title">Geometryczny Puls Miasta</h3>
+                            <span class="project-card-badge badge-any">Wnętrze / Zewnątrz</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projekt 6 -->
+                <div class="project-card" onclick="openProjectDetail('proj-6')">
+                    <div class="project-card-img-wrapper">
+                        <img src="./wolne projekty na murale/Projekt (20250425062454)_opt.webp" alt="Struktura Abstrakcji" class="project-card-img">
+                        <div class="project-card-overlay">
+                            <h3 class="project-card-title">Struktura Abstrakcji</h3>
+                            <span class="project-card-badge badge-inside">Wnętrze</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ (Accordion) -->
+    <section class="section-faq" id="faq">
+        <div class="container">
+            <h2 class="faq-title">F.A.Q.</h2>
+            <div class="faq-container">
+                <!-- Q1 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Jakich farb używacie?</h4>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Do realizacji prac ściennych zewnątrz stosujemy wyłącznie profesjonalne, odporne na warunki atmosferyczne i promienie UV farby fasadowe (akrylowe, silikatowe) oraz wysokiej jakości spraye artystyczne (Montana Gold/Black, Molotow). Do prac wewnętrznych wybieramy nietoksyczne, bezwonne farby lateksowe i akrylowe bezpieczne dla zdrowia domowników i pracowników.</p>
+                    </div>
+                </div>
+                
+                <!-- Q2 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Ile trwa realizacja muralu?</h4>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Czas malowania zależy od wielkości ściany i stopnia skomplikowania projektu. Standardowy mural ścienny o powierzchni około 15-25 m² realizujemy zazwyczaj w ciągu 3 do 6 dni roboczych, zakładając sprzyjające warunki atmosferyczne (przy pracy na zewnątrz).</p>
+                    </div>
+                </div>
+
+                <!-- Q3 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Czy robicie projekty komercyjne / logotypy?</h4>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Tak! Projektujemy i malujemy murale dla firm, biur, deweloperów, restauracji i hoteli. Tworzymy również komercyjne kompozycje wielkoformatowe integrujące logotyp marki z artystyczną wizją na ścianie, co stanowi świetną i oryginalną formę reklamy.</p>
+                    </div>
+                </div>
+
+                <!-- Q4 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Czy namalujecie projekt wygenerowany lub znaleziony w internecie?</h4>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Nie. Jako profesjonalne artystki z wyższym wykształceniem artystycznym (MFA) dbamy o unikalność naszych prac. Tworzymy wyłącznie autorskie, oryginalne projekty, dedykowane konkretnemu klientowi i dopasowane do charakteru przestrzeni. Nie kopiujemy cudzych prac ani grafik wygenerowanych przez AI.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wycena / Kontakt -->
+    <section class="section-quote" id="quote">
+        <div class="container">
+            <div class="quote-grid">
+                <div class="quote-info">
+                    <h2 class="quote-title">STWÓRZMY<br><span>COŚ WIELKIEGO.</span></h2>
+                    <p class="quote-desc">
+                        Wypełnij nasz interaktywny formularz wyceny. Przeanalizujemy parametry Twojej ściany i odezwiemy się ze wstępnym kosztorysem w ciągu 48 godzin.
+                    </p>
+                    
+                    <div class="quote-contacts">
+                        <div class="contact-item">
+                            <span class="contact-icon">@</span>
+                            <span class="contact-text">[adres mailowy do uzupełnienia]</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <span class="contact-text">Toruń / Cała Polska</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="quote-form-container">
+                    <form id="quote-form" class="brutalist-form">
+                        
+                        <!-- Wymiary -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="wall-width" class="form-label">Szerokość ściany (m)</label>
+                                <input type="number" step="0.1" id="wall-width" class="form-input" required placeholder="np. 4.5">
+                            </div>
+                            <div class="form-group">
+                                <label for="wall-height" class="form-label">Wysokość ściany (m)</label>
+                                <input type="number" step="0.1" id="wall-height" class="form-input" required placeholder="np. 3.0">
+                                <span id="area-badge" class="area-badge">Powierzchnia: 0.00 m²</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Lokalizacja & Przestrzeń -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="wall-location" class="form-label">Lokalizacja</label>
+                                <input type="text" id="wall-location" class="form-input" required placeholder="np. Toruń, Toruń okolice, lub inne miasto">
+                            </div>
+                            <div class="form-group">
+                                <label for="space-type" class="form-label">Typ przestrzeni</label>
+                                <select id="space-type" class="form-input" required>
+                                    <option value="inside">Wewnątrz budynku</option>
+                                    <option value="outside">Elewacja zewnętrzna</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Stan ściany -->
+                        <div class="form-group">
+                            <label for="wall-state" class="form-label">Stan ściany (podłoża)</label>
+                            <input type="text" id="wall-state" class="form-input" required placeholder="np. gładka i zagruntowana, tynk surowy, wymaga naprawy">
+                        </div>
+
+                        <!-- Budżet -->
+                        <div class="form-group">
+                            <label for="estimated-budget" class="form-label">Szacowany budżet (PLN)</label>
+                            <select id="estimated-budget" class="form-input" required>
+                                <option value="low">Poniżej 5 000 PLN</option>
+                                <option value="mid">5 000 - 10 000 PLN</option>
+                                <option value="high">Powyżej 10 000 PLN</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="form-submit-btn">Generuj zapytanie ofertowe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stopka (Footer) -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <span class="footer-logo">ARTmagadon</span>
+                    <span class="footer-copy">© 2026 Studio ARTmagadon. MFA Mural Collective.</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#about" class="footer-link">O nas</a>
+                    <a href="#projects" class="footer-link">Wolne projekty</a>
+                    <a href="#quote" class="footer-link">Wycena</a>
+                </div>
+                <div class="footer-icons">
+                    <div class="footer-icon">IG</div>
+                    <div class="footer-icon">FB</div>
+                    <div class="footer-icon">BE</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interaktywny Modal (Overlay dla Lightboxa i Portfolio) -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal-card">
+            <button class="modal-close-btn" id="modal-close" aria-label="Zamknij">×</button>
+            <div class="modal-body" id="modal-content">
+                <!-- Treść ładuje się dynamicznie przez JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Script -->
+    <script type="module" src="app.js"></script>
+</body>
+</html>

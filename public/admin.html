@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARTmagadon - Panel Administratora</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anybody:ital,wght@0,100..900;1,100..900&family=Hanken+Grotesk:wght@100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <!-- Main styles -->
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* Admin specific styles override/extensions */
+        body {
+            background-color: var(--color-bg-dark);
+            color: var(--color-text-white);
+            font-family: var(--font-body);
+        }
+
+        .admin-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px var(--spacing-margin-mobile);
+        }
+
+        @media (min-width: 768px) {
+            .admin-container {
+                padding: 60px var(--spacing-margin-desktop);
+            }
+        }
+
+        /* Glassmorphism Auth Box */
+        .auth-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
+        }
+
+        .auth-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--color-border-opacity);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 4px;
+            width: 100%;
+            max-width: 450px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+
+        .auth-card h2 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            border-bottom: 2px solid var(--color-border-opacity);
+            padding-bottom: 12px;
+        }
+
+        /* Dashboard layout */
+        .dashboard {
+            display: none; /* Show only when authenticated */
+        }
+
+        .dashboard.active {
+            display: block;
+        }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--color-border-opacity);
+            padding-bottom: 24px;
+            margin-bottom: 40px;
+        }
+
+        .admin-header h1 {
+            font-family: var(--font-display);
+            text-transform: uppercase;
+            font-size: 2.2rem;
+            letter-spacing: -1px;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        @media (min-width: 992px) {
+            .dashboard-grid {
+                grid-template-columns: 1.2fr 1.8fr;
+            }
+        }
+
+        /* Forms */
+        .form-section {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--color-border-opacity);
+            padding: 30px;
+            border-radius: 4px;
+            height: fit-content;
+        }
+
+        .form-section h3 {
+            font-family: var(--font-display);
+            text-transform: uppercase;
+            font-size: 1.4rem;
+            margin-bottom: 24px;
+            color: var(--color-agni-yellow);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            color: rgba(244, 244, 244, 0.6);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--color-border-opacity);
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--color-text-white);
+            border-radius: 2px;
+            transition: border-color 0.3s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--color-agata-turquoise);
+        }
+
+        select.form-input option {
+            background-color: var(--color-bg-dark);
+            color: var(--color-text-white);
+        }
+
+        /* Custom file upload wrapper */
+        .file-upload-wrapper {
+            position: relative;
+            border: 1px dashed var(--color-border-opacity);
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: border-color 0.3s;
+        }
+
+        .file-upload-wrapper:hover {
+            border-color: var(--color-agni-yellow);
+        }
+
+        .file-upload-wrapper input[type="file"] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        /* Buttons */
+        .admin-btn {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 12px 24px;
+            border: 1px solid var(--color-text-white);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            width: 100%;
+        }
+
+        .admin-btn-primary {
+            background-color: var(--color-text-white);
+            color: var(--color-text-dark);
+        }
+
+        .admin-btn-primary:hover {
+            background-color: transparent;
+            color: var(--color-text-white);
+        }
+
+        .admin-btn-secondary {
+            background-color: transparent;
+            color: var(--color-text-white);
+            border-color: var(--color-border-opacity);
+            width: auto;
+        }
+
+        .admin-btn-secondary:hover {
+            border-color: var(--color-text-white);
+        }
+
+        .admin-btn-danger {
+            background-color: transparent;
+            color: var(--color-agni-red);
+            border-color: var(--color-agni-red);
+            padding: 6px 12px;
+            font-size: 0.8rem;
+            width: auto;
+        }
+
+        .admin-btn-danger:hover {
+            background-color: var(--color-agni-red);
+            color: var(--color-text-white);
+        }
+
+        /* Project grid / list */
+        .projects-list-section {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--color-border-opacity);
+            padding: 30px;
+            border-radius: 4px;
+        }
+
+        .projects-list-header {
+            font-family: var(--font-display);
+            text-transform: uppercase;
+            font-size: 1.4rem;
+            margin-bottom: 24px;
+            color: var(--color-agata-turquoise);
+            border-bottom: 1px solid var(--color-border-opacity);
+            padding-bottom: 12px;
+        }
+
+        .admin-project-item {
+            display: grid;
+            grid-template-columns: 80px 1fr auto;
+            gap: 20px;
+            align-items: center;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--color-border-opacity);
+        }
+
+        .admin-project-item:last-child {
+            border-bottom: none;
+        }
+
+        .admin-project-thumb {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border: 1px solid var(--color-border-opacity);
+        }
+
+        .admin-project-info h4 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+
+        .admin-project-info p {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: rgba(244, 244, 244, 0.5);
+        }
+
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 15, 18, 0.9);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            font-family: var(--font-mono);
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .loading-overlay.active {
+            display: flex;
+        }
+
+        .alert-msg {
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid transparent;
+            font-size: 0.9rem;
+            border-radius: 2px;
+            display: none;
+        }
+
+        .alert-msg.error {
+            display: block;
+            background: rgba(255, 69, 0, 0.15);
+            border-color: var(--color-agni-red);
+            color: #ff8855;
+        }
+
+        .alert-msg.success {
+            display: block;
+            background: rgba(0, 206, 209, 0.15);
+            border-color: var(--color-agata-turquoise);
+            color: #a3f7f9;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Loading screen -->
+    <div id="loading-overlay" class="loading-overlay">
+        <span>Ładowanie...</span>
+    </div>
+
+    <div class="admin-container">
+        
+        <!-- --- LOGIN SCREEN --- -->
+        <div id="auth-section" class="auth-wrapper">
+            <div class="auth-card">
+                <h2>Logowanie Admin</h2>
+                <div id="login-error" class="alert-msg error"></div>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="login-email">Adres E-mail</label>
+                        <input type="email" id="login-email" class="form-input" required placeholder="np. studio@artmagadon.pl">
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Hasło</label>
+                        <input type="password" id="login-password" class="form-input" required placeholder="••••••••">
+                    </div>
+                    <button type="submit" class="admin-btn admin-btn-primary" style="margin-top: 10px;">Zaloguj się</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- --- DASHBOARD SCREEN --- -->
+        <div id="dashboard-section" class="dashboard">
+            <header class="admin-header">
+                <div>
+                    <h1>ARTmagadon</h1>
+                    <p class="text-mono" style="color: var(--color-agata-turquoise);">Panel Zarządzania Realizacjami</p>
+                </div>
+                <button id="logout-btn" class="admin-btn admin-btn-secondary">Wyloguj się</button>
+            </header>
+
+            <div id="dashboard-alert" class="alert-msg"></div>
+
+            <div class="dashboard-grid">
+                
+                <!-- LEFT: Add form -->
+                <section class="form-section">
+                    <h3>Dodaj nowy projekt</h3>
+                    <form id="project-form">
+                        
+                        <div class="form-group">
+                            <label for="proj-title">Tytuł projektu</label>
+                            <input type="text" id="proj-title" class="form-input" required placeholder="np. Geometryczny Puls Miasta">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="proj-author">Autorka wzoru</label>
+                            <select id="proj-author" class="form-input" required>
+                                <option value="Agnieszka">Agnieszka</option>
+                                <option value="Agata">Agata</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="proj-space">Przeznaczenie przestrzeni</label>
+                            <select id="proj-space" class="form-input" required>
+                                <option value="Wnętrze">Wnętrze (salon, kawiarnia itp.)</option>
+                                <option value="Zewnętrzna">Zewnętrzna (elewacja, mur)</option>
+                                <option value="Dowolna przestrzeń">Dowolna przestrzeń</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="proj-dimensions">Sugerowane wymiary</label>
+                            <input type="text" id="proj-dimensions" class="form-input" required placeholder="np. min. 4m x 3m">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="proj-price">Cena / Status wyceny</label>
+                            <input type="text" id="proj-price" class="form-input" required placeholder="np. Projekt autorski + wykonanie">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="proj-desc">Opis projektu</label>
+                            <textarea id="proj-desc" class="form-input" rows="4" required placeholder="Opisz stylistykę, polecane pomieszczenia i charakterystykę projektu..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Zdjęcie projektu</label>
+                            <div class="file-upload-wrapper">
+                                <span id="file-label-text">Kliknij lub przeciągnij plik tutaj</span>
+                                <input type="file" id="proj-image" accept="image/*" required>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="admin-btn admin-btn-primary">Wyślij projekt na stronę</button>
+                    </form>
+                </section>
+
+                <!-- RIGHT: List current projects -->
+                <section class="projects-list-section">
+                    <h3 class="projects-list-header">Aktualne wolne projekty</h3>
+                    <div id="projects-list-container">
+                        <!-- Projects list will be loaded here dynamically -->
+                        <p class="text-mono" style="color: rgba(244,244,244,0.4); text-align: center; padding: 40px 0;">
+                            Ładowanie listy projektów...
+                        </p>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Script connection (as module to import firebase config) -->
+    <script type="module" src="admin.js"></script>
+</body>
+</html>
